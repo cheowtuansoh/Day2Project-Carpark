@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disqus Comments</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 4px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: transparent;
+      color: #1e1b13;
+    }
+    #disqus_thread {
+      min-height: 240px;
+      width: 100%;
+    }
+  </style>
+  <script>
+    // Suppress third-party cross-origin tracker warnings inside the iframe
+    window.onerror = function() { return true; };
+    window.addEventListener('error', function(e) { e.preventDefault(); return true; }, true);
+    window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); return true; }, true);
+  </script>
+</head>
+<body>
+  <div id="disqus_thread"></div>
+  <script>
+    (function() {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var shortname = (params.get('shortname') || 'day2-project-carpark').replace(/[^a-zA-Z0-9_-]/g, '');
+        var locId = (params.get('id') || 'default').replace(/[^a-zA-Z0-9_-]/g, '');
+        var locTitle = params.get('title') || 'Comments';
+
+        window.disqus_config = function () {
+          // Stable canonical URL & unique identifier per thread/topic
+          this.page.url = window.location.origin + '/location/' + encodeURIComponent(locId);
+          this.page.identifier = 'disqus-topic-' + encodeURIComponent(locId);
+          this.page.title = locTitle;
+          this.language = 'en_US'; // US English configuration
+        };
+
+        var d = document, s = d.createElement('script');
+        s.src = 'https://' + shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      } catch (e) {
+        console.warn('Disqus load notice:', e);
+      }
+    })();
+  </script>
+</body>
+</html>

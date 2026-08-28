@@ -1,0 +1,6 @@
+{
+  "name": "ParkFinder - Real-Time Carpark & EV Availability",
+  "description": "Real-time carpark lots and EV charging availability tracker for motorists with location search, partner data (LTA, URA, HDB, Malls), and high-demand flash alerts.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
