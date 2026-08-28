@@ -4,58 +4,6 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/api/carparks/live",
-      "destination": "/api/carparks/live"
-    },
-    {
-      "source": "/api/carparks/recommend",
-      "destination": "/api/carparks/recommend"
-    },
-    {
-      "source": "/api/carparks/status",
-      "destination": "/api/carparks/status"
-    },
-    {
-      "source": "/api/carparks",
-      "destination": "/api/carparks/live"
-    },
-    {
-      "source": "/api/lta/carparks",
-      "destination": "/api/lta/carparks"
-    },
-    {
-      "source": "/api/lta/status",
-      "destination": "/api/lta/status"
-    },
-    {
-      "source": "/api/lta/verify",
-      "destination": "/api/lta/verify"
-    },
-    {
-      "source": "/api/onemap/token",
-      "destination": "/api/onemap/token"
-    },
-    {
-      "source": "/api/onemap/search",
-      "destination": "/api/onemap/search"
-    },
-    {
-      "source": "/api/onemap/route",
-      "destination": "/api/onemap/route"
-    },
-    {
-      "source": "/api/onemap/revgeocode",
-      "destination": "/api/onemap/revgeocode"
-    },
-    {
-      "source": "/api/health",
-      "destination": "/api/health"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
       "source": "/disqus-embed.html",
       "destination": "/disqus-embed.html"
     },
@@ -71,7 +19,7 @@
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization, x-lta-api-key, x-account-key, accountkey" }
+        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization, x-lta-api-key, x-account-key, accountkey, x-api-key" }
       ]
     }
   ]

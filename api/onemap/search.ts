@@ -6,8 +6,10 @@ export default async function handler(req: Request, res: Response) {
   if (handleCorsAndPreflight(req, res)) return;
 
   try {
-    const { searchVal, pageNum = '1' } = req.query;
-    if (!searchVal || typeof searchVal !== 'string') {
+    const { searchVal, q, query, pageNum = '1' } = req.query;
+    const actualSearchVal = (searchVal || q || query || '').toString().trim();
+
+    if (!actualSearchVal) {
       return res.status(400).json({ error: 'searchVal query parameter is required' });
     }
 
@@ -15,7 +17,7 @@ export default async function handler(req: Request, res: Response) {
     const token = tokenResult.token;
 
     const url = `https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${encodeURIComponent(
-      searchVal
+      actualSearchVal
     )}&returnGeom=Y&getAddrDetails=Y&pageNum=${pageNum}`;
 
     const headers: Record<string, string> = {};
