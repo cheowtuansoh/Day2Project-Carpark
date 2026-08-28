@@ -1,10 +1,10 @@
-import type { Request, Response } from 'express';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { fetchLTADataMallCarparks } from '../../src/server/ltaService';
 import { getOneMapToken } from '../../src/server/onemapService';
 import { INITIAL_CARPARKS } from '../../src/data/carparkData';
 import { handleCorsAndPreflight, parseRequestBody } from '../../src/server/corsHelper';
 
-export default async function handler(req: Request, res: Response) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (handleCorsAndPreflight(req, res)) return;
 
   try {

@@ -1,8 +1,8 @@
-import type { Request, Response } from 'express';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getOneMapToken } from '../../src/server/onemapService';
 import { handleCorsAndPreflight } from '../../src/server/corsHelper';
 
-export default async function handler(req: Request, res: Response) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (handleCorsAndPreflight(req, res)) return;
 
   try {
